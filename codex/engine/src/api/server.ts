@@ -14,7 +14,8 @@ export function startServer(engine: CodexEngine, port: number): void {
   app.use(controlledApiAuth);
   app.use(createRoutes(engine));
 
-  app.listen(port, "127.0.0.1", () => {
-    console.log(`Codex engine API listening at http://127.0.0.1:${port}`);
+  const bindHost = process.env.CODEX_BIND_HOST?.trim() || "127.0.0.1";
+  app.listen(port, bindHost, () => {
+    console.log(`Codex engine API listening at http://${bindHost}:${port}`);
   });
 }

@@ -18,6 +18,10 @@ export interface HardwareProfile {
   recordedAtUTC: string;
 }
 
+function isContainerRuntime(): boolean {
+  return fs.existsSync("/.dockerenv");
+}
+
 function readMachineId(): string {
   const machineIdPath = "/etc/machine-id";
   if (!fs.existsSync(machineIdPath)) {
@@ -52,12 +56,26 @@ export function generateHardwareProfile(): HardwareProfile {
   };
 }
 
-function stableProfile(profile: HardwareProfile): Omit<HardwareProfile, "recordedAtUTC"> {
+function stableProfile(profile: HardwareProfile): Record<string, string | number> {
+  const containerMode = isContainerRuntime();
+
+  if (containerMode) {
+    // In container mode, avoid drift on runtime-specific fields (hostname, root fs size).
+    return {
+      machineId: profile.machineId,
+      cpu: profile.cpu,
+      cores: profile.cores,
+      ramGB: profile.ramGB,
+      architecture: profile.architecture,
+      kernel: profile.kernel
+    };
+  }
+
   const { recordedAtUTC: _ignored, ...stable } = profile;
   return stable;
 }
 
-function profileHash(profile: Omit<HardwareProfile, "recordedAtUTC">): string {
+function profileHash(profile: Record<string, string | number>): string {
   return crypto.createHash("sha256").update(JSON.stringify(profile)).digest("hex");
 }
 

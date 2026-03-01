@@ -13,8 +13,6 @@ TimeoutStartSec=0
 User=t79
 NoNewPrivileges=true
 PrivateTmp=true
-ProtectSystem=strict
-ProtectHome=true
 
 [Install]
 WantedBy=multi-user.target

@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "engine": "AXIOM_CORE",
+    "nodeRole": "ASUS_ENGINEERING",
+    "gitCommit": "d1021547d96acfd814d0110fdb17f83d39ab40ee",
+    "ruleVersion": "v1.0.0",
+    "ruleHash": "fa55e5baaacf482e7f57ae18406f3f104e3e3495c29d81294518047bb7ffbbac",
+    "timestampUTC": "2026-03-01T10:45:58.017Z",
+    "prevAuditHash": "a6e991005529afe0103d6ed55695d026f70776a6fef73ca5c77941dc3fec2ba8",
+    "auditHash": "89531fd17e10afa7be6f8b3e5bc2db9183bcb874d8dfe3931e93d67cad4e6df2"
+  },
+  "deterministic": {
+    "timestampUTC": "2026-03-01T10:45:58.009Z",
+    "overallStatus": "WARNING",
+    "issues": [
+      {
+        "severity": "MEDIUM",
+        "area": "Repository State",
+        "problem": "Uncommitted changes detected",
+        "why": "Engineering state is not reproducible",
+        "impact": "Builds may not match repository history",
+        "fix": "Commit or stash changes before release audits",
+        "priority": 3
+      }
+    ]
+  },
+  "aiAnalysis": {
+    "overallStatus": "WARNING",
+    "riskLevel": 3,
+    "issues": [
+      {
+        "severity": "MEDIUM",
+        "area": "AI Layer",
+        "why": "OpenAI API key not available",
+        "impact": "AI-enhanced risk reasoning unavailable",
+        "fix": "Set OPENAI_API_KEY in runtime environment",
+        "priority": 3
+      }
+    ],
+    "upgradePlan": [
+      {
+        "step": 1,
+        "action": "Inject OPENAI_API_KEY into service environment",
+        "expectedOutcome": "AI structured engineering reasoning enabled"
+      }
+    ]
+  }
+}

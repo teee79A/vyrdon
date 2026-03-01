@@ -1,0 +1,28 @@
+{
+  "doctrine_version": "1.0.0",
+  "runtime_control": {
+    "fail_closed": true,
+    "on_invalid_transition": "TERMINATE_PROCESS"
+  },
+  "state_machine": {
+    "initial_state": "BOOT",
+    "allowed_transitions": {
+      "BOOT": ["IDLE"],
+      "IDLE": ["TASK_ACTIVE"],
+      "TASK_ACTIVE": ["VALIDATING"],
+      "VALIDATING": ["EXECUTING"],
+      "EXECUTING": ["VERIFIED"],
+      "VERIFIED": ["ARCHIVED"],
+      "ARCHIVED": ["IDLE"]
+    }
+  },
+  "release_rule": {
+    "required": [
+      "AUDIT_PASS",
+      "BUILD_PASS",
+      "MANIFEST_GENERATED",
+      "INTEGRITY_HASH_UPDATED"
+    ],
+    "on_failure": "BLOCK_RELEASE"
+  }
+}

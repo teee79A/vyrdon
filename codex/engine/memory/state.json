@@ -1,0 +1,13 @@
+{
+  "engineVersion": "1.0.0",
+  "currentState": "IDLE",
+  "lastBootUTC": "2026-03-01T11:06:01.667Z",
+  "lastAuditHash": "89531fd17e10afa7be6f8b3e5bc2db9183bcb874d8dfe3931e93d67cad4e6df2",
+  "lastBuildHash": "",
+  "lastReleaseHash": "",
+  "integrityHash": "84809b636055c37341e6175ef135f08a093ff5e6943bd816b5fe78763273ed01",
+  "lastCheckpoint": "74795cd90101f886025325d74b6771b863a09d39c167b538e948382373b35a37",
+  "activeContext": "proposal:P-002",
+  "lastTransitionUTC": "2026-03-01T08:16:32.261Z",
+  "lastProposalDecision": "MANUAL_REVIEW:83fb2a60da04363e0d4cdd26e2429b082d70ff3e26382e9ab48f11544a6e7400"
+}

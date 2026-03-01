@@ -1,0 +1,18 @@
+# Node
+**/node_modules/
+**/dist/
+
+# Runtime artifacts
+codex/logs/
+codex/archive/**/report-*.json
+codex/archive/**/chain-*.json
+codex/memory/journal.log
+codex/memory/journal.chain
+codex/memory/integrity.hash
+codex/memory/checkpoints/
+
+# OS/editor
+*.swp
+*.swo
+.DS_Store
+.vscode/

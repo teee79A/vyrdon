@@ -1,0 +1,23 @@
+{
+  "engine_id": "ASUS_VSE_01",
+  "node_identity": "ASUS_ENGINEERING_NODE",
+  "boot_count": 1,
+  "last_boot_utc": "2026-03-01T11:06:01.665Z",
+  "current_state": "IDLE",
+  "active_task": null,
+  "release_version": "v1.0.0",
+  "audit_chain_head": null,
+  "build_chain_head": null,
+  "integrity_chain_head": null,
+  "persona_lock": true,
+  "persona_hash": "e9460536eb535736acf875f82b0024b352053c41758230935eaba97e0b8e4256",
+  "currentState": "IDLE",
+  "engineVersion": "1.0.0",
+  "lastBootUTC": null,
+  "lastAuditHash": "",
+  "lastBuildHash": "",
+  "lastReleaseHash": "",
+  "integrityHash": "e6ed1082f4f561d93ee3325c81a9ba38fe0af481feb383aff15e4f82f0bdff2c",
+  "lastCheckpoint": "",
+  "activeContext": "BOOT"
+}

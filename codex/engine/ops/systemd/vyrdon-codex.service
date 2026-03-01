@@ -1,0 +1,42 @@
+[Unit]
+Description=VYRDON AXIOM CORE (Engineering Brain)
+After=network.target
+ConditionPathExists=/run/vyrdon/allow-host-runtime
+
+[Service]
+Type=simple
+User=t79
+WorkingDirectory=/home/t79/ASUS/codex
+EnvironmentFile=/etc/vyrdon/axiom.env
+Environment=REQUIRE_CONTAINER_RUNTIME=false
+ExecStart=/usr/bin/node /home/t79/ASUS/codex/engine/dist/index.js
+Restart=always
+RestartSec=3
+
+StandardOutput=append:/home/t79/ASUS/codex/logs/system.log
+StandardError=append:/home/t79/ASUS/codex/logs/system-error.log
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectControlGroups=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectKernelLogs=true
+ProtectClock=true
+ProtectHostname=true
+ProtectProc=invisible
+ProcSubset=pid
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryDenyWriteExecute=true
+RestrictRealtime=true
+LockPersonality=true
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+AppArmorProfile=asus-codex-engine
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/home/t79/ASUS/codex/logs /home/t79/ASUS/codex/memory /home/t79/ASUS/codex/workspace /home/t79/ASUS/codex/archive
+
+[Install]
+WantedBy=multi-user.target

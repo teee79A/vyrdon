@@ -1,0 +1,23 @@
+{
+  "lock_id": "VYRDON_ARCH_LOCK_2026_03_01",
+  "status": "LOCKED",
+  "locked_at_utc": "2026-03-01T00:00:00Z",
+  "roles": {
+    "ASUS": "engineering_authority",
+    "ASUS_CODEX": "deterministic_engineering_os_engine",
+    "VYRDON": "mandatory_execution_certification_gate",
+    "DELL": "live_terminal_execution_node"
+  },
+  "axiom": "NO_CERTIFICATION_NO_EXECUTION",
+  "non_bypass": true,
+  "runtime_policy": {
+    "container_only": true,
+    "host_runtime_blocked_by_default": true,
+    "bootstrap_logic_path": "system/bootstrap.json"
+  },
+  "change_control": {
+    "architecture_mutation_requires_signed_release": true,
+    "runtime_bootstrap_signature_required": true,
+    "integrity_merkle_required": true
+  }
+}

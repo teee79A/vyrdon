@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+  codex-engineering-node:
+    container_name: codex-engineering-node
+    hostname: asus-vse-01
+    build:
+      context: /home/t79/ASUS/codex
+      dockerfile: docker/Dockerfile
+    restart: unless-stopped
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:asus-codex-engine
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    pids_limit: 256
+    init: true
+    environment:
+      NODE_ENV: production
+      CODEX_PORT: "4000"
+      REQUIRE_CONTAINER_RUNTIME: "true"
+      ASUS_CODEX_ROOT: /app
+      OPENAI_API_KEY_FILE: /run/secrets/openai_api_key
+    secrets:
+      - openai_api_key
+    ports:
+      - "127.0.0.1:4000:4000"
+    volumes:
+      - /home/t79/ASUS/codex/system:/app/system:rw
+      - /home/t79/ASUS/codex/memory:/app/memory:rw
+      - /home/t79/ASUS/codex/workspace:/app/workspace:rw
+      - /home/t79/ASUS/codex/archive:/app/archive:rw
+      - /home/t79/ASUS/codex/logs:/app/logs:rw
+      - /home/t79/ASUS/codex/config:/app/config:rw
+      - /home/t79/ASUS/codex/rules:/app/rules:rw
+      - /home/t79/ASUS/codex/policies.json:/app/policies.json:ro
+    networks:
+      - codex_net
+
+secrets:
+  openai_api_key:
+    file: /home/t79/.asus_secrets/openai.key
+
+networks:
+  codex_net:
+    name: codex-engineering-net
+    driver: bridge

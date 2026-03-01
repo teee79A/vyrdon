@@ -1,0 +1,11 @@
+{
+  "machineId": "d5548fe3dd9e4e50880ef147b9bd22af",
+  "hostname": "t79",
+  "cpu": "12th Gen Intel(R) Core(TM) i3-1215U",
+  "cores": 8,
+  "ramGB": 23,
+  "diskRootGB": 915,
+  "architecture": "x64",
+  "kernel": "6.14.0-37-generic",
+  "recordedAtUTC": "2026-03-01T08:04:03.606Z"
+}

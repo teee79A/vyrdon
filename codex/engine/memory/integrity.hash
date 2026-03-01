@@ -1,0 +1,40 @@
+{
+  "version": "v2-merkle",
+  "generated_at_utc": "2026-03-01T11:53:02.745Z",
+  "merkle_root": "84809b636055c37341e6175ef135f08a093ff5e6943bd816b5fe78763273ed01",
+  "composite_hash": "361c4db398e8cfc0d16b05284bfc49b710c351b6ea08464c9ed63b5b06dab653",
+  "leaves": [
+    {
+      "file": "system/bootstrap.json",
+      "hash": "09d73fc2706a11b5dd1647be520590be89aec52f7784a832e1e18debe7df5ae1"
+    },
+    {
+      "file": "system/doctrine.json",
+      "hash": "581f1e9dac8136ed14aaa4b0adac00305b7319cd932723d36d013e8438be43dc"
+    },
+    {
+      "file": "system/hardware-profile.json",
+      "hash": "7c8039f69d9e7fdfdf5ac9ce5136843b2ea370cb973332768568681612d1a295"
+    },
+    {
+      "file": "memory/journal.log",
+      "hash": "e0502e1014ffb7d042164fa53d162a98ecb1bf10b09fcec9bab361301bb64c12"
+    },
+    {
+      "file": "memory/state.json",
+      "hash": "674f6c90e216e92a2a54e9c67b29f4e1d6aaffb7a1e294341f05cb0c9c547870"
+    },
+    {
+      "file": "system/architecture-lock.json",
+      "hash": "c8506e5892c19cdda063ebc986cf784e1f9440307f0cab4b005e153c58bae0f2"
+    },
+    {
+      "file": "policies.json",
+      "hash": "2353f00e904c19cfd50c96283d30b6ba01a566487ef6bdee5e60a4f8633b8b65"
+    },
+    {
+      "file": "system/system-prompt.txt",
+      "hash": "bb1f59d27d7b46caaa2dd158adabf199a9443fd0ee577fdb80b7289e21d7c647"
+    }
+  ]
+}

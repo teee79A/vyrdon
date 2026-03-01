@@ -1,0 +1,13 @@
+ENGINE_NAME=AXIOM_CORE
+ENGINE_ROLE=ASUS_ENGINEERING
+MODE=DETERMINISTIC_OPERATIONAL_AGENT
+
+CORE_RULES:
+- No file deletion outside codex-engine root
+- No automatic deployment
+- No git mutation without explicit operator approval
+- No rule modification without manifest regeneration
+- All state transitions must be journaled
+- All decisions must be hash-bound
+
+FAIL_CLOSED=true

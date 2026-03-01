@@ -1,0 +1,22 @@
+{
+  "policy_version": "1.0.0",
+  "execution": {
+    "approval_required_for_controlled_domain": true,
+    "allow_free_text_approval": false,
+    "allowed_commands": [
+      "APPROVE <intent_id>",
+      "REJECT <intent_id>",
+      "STATUS"
+    ]
+  },
+  "security": {
+    "secrets_in_repo_allowed": false,
+    "localhost_bind_required": true,
+    "direct_main_push_allowed": false
+  },
+  "integrity": {
+    "hash_algorithm": "sha256",
+    "append_only_journal": true,
+    "checkpoint_required": true
+  }
+}

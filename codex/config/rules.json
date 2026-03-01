@@ -1,0 +1,7 @@
+{
+  "ruleVersion": "v1.0.0",
+  "payment": {
+    "maxAmount": 10000,
+    "requireManualReviewAbove": 5000
+  }
+}

@@ -1,0 +1,10 @@
+/home/t79/ASUS/codex/engine/logs/*.log /home/t79/ASUS/codex/logs/*.log {
+  daily
+  rotate 14
+  missingok
+  notifempty
+  compress
+  delaycompress
+  copytruncate
+  create 0640 t79 t79
+}
